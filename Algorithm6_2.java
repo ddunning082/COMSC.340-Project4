@@ -23,7 +23,7 @@ public class Algorithm6_2 {
         }
     }
 
-    public void knapsack3(int n, int[] p, int[] w, int W, int[] maxprofit) {
+    public void knapsack3(int n, int[] p, int[] w, int W) {
         PriorityQueue<Node> PQ = new PriorityQueue<>();
         Node u, v;
 
