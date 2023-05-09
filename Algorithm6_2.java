@@ -47,7 +47,8 @@ public class Algorithm6_2 {
                 u.bound = bound(u, n, p, w, W);
                 if (u.bound > maxprofit[0])
                     PQ.add(u);
-
+                
+                u = new Node();
                 u.weight = v.weight;
                 u.profit = v.profit;
                 u.bound = bound(u, n, p, w, W);
