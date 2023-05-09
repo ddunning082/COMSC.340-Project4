@@ -9,7 +9,8 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Algorithm6_2 {
-
+   static int[] maxProfit = new int[1];
+    
     class Node implements Comparable<Node> {
         int level;
         int profit;
@@ -106,29 +107,29 @@ public class Algorithm6_2 {
         algorithm.knapsack3(n, p, w, W, maxProfit);
         switch(input){
            case 1: W = 16;
-                   int p = {40, 30, 50, 10};
-                   int w = {2, 5, 10, 5};
+                   p = {40, 30, 50, 10};
+                   w = {2, 5, 10, 5};
                    break;
            case 2: W = 18;
-                   int p = {40, 30, 50,10};
-                   int w = {2, 5, 10, 5};
+                   p = {40, 30, 50,10};
+                   w = {2, 5, 10, 5};
                    break;
            case 3: W = 25;
-                   int p = {50, 55, 15, 50};
-                   int w = {2, 10, 5, 20};
+                   p = {50, 55, 15, 50};
+                   w = {2, 10, 5, 20};
                    break;
            case 4: W = 40;
-                   int p = {50, 55, 15,50};
-                   int w = {2, 10, 5, 20};
+                   p = {50, 55, 15,50};
+                   w = {2, 10, 5, 20};
                    break;
            case 5: W = 1;
-                   int p = {1, 1, 1, 1};
-                   int w = {2, 3, 4, 5};
+                   p = {1, 1, 1, 1};
+                   w = {2, 3, 4, 5};
                    break;
         }
         }
        
-        System.out.println("There was a total profit of " + profit);
+        System.out.println("There was a total profit of " + maxProfit);
         System.out.println("The items selected were ");
         System.out.println("Number of nodes visited was ");
 
