@@ -5,6 +5,7 @@
 ///Class: Analysis of Algorithms		/////////////
 /////////////////////////////////////////////////////////////
 
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -12,12 +13,14 @@ import java.util.Scanner;
 
 class Algorithm6_1{	
 	//Variables
+	//Switch these sets to match the cases
 	static int n = 4;
 	static int W = 16;
 	static int[] p = {0 ,40, 30, 50, 10};
 	static int[] w = {0 ,2, 5, 10, 5};
 	static int maxProfit; 
 	static boolean[] bestSet = new boolean[n+1];
+	static int numOfNode = 0;
 	
 	
 
@@ -27,6 +30,7 @@ static void knapsack2()
 	Node u, v;								//Intialize Nodes
 	
 	v = new Node();							//Node v info
+	numOfNode++;
 	v.level = 0;
 	v.profit = 0;
 	v.weight = 0;
@@ -38,6 +42,7 @@ static void knapsack2()
 	{
         	v = P.poll();
         	u = new Node();
+        	numOfNode++;
             u.level = v.level + 1;		//Set u to a child to v
             u.weight = v.weight + w[u.level];	//Set u to the next item after child
             u.profit = v.profit + p[u.level];
@@ -55,7 +60,7 @@ static void knapsack2()
             	maxProfit = u.profit;
             	for(int t = 0; t <= n; t++) 
             	{
-            		bestSet[t] = u.included[u.level];
+            		bestSet[t] = u.included[t];
             	}
             }
 
@@ -65,6 +70,7 @@ static void knapsack2()
             }
             
             u = new Node();
+            numOfNode++;
             u.level = v.level + 1;
             u.weight = v.weight;
             u.profit = v.profit;
@@ -118,8 +124,15 @@ public static void main(String[] args)
 	knapsack2();
 	
 	System.out.println("There was a total profit of " + maxProfit);
-    System.out.println("The items selected were " );
-    System.out.println("Number of nodes visited was ");
+    for(int t = 1; t <= n; t++) 
+	{
+    	if(bestSet[t]) 
+    	{
+    		System.out.println("Items: " + t);
+    	}
+    	
+	}
+    System.out.println("Number of nodes visited was " + numOfNode);
 
 }
 }
