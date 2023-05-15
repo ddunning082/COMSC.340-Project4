@@ -1,4 +1,4 @@
-package algorithm6_2;
+
 
 /* Author: Donovan Dunning
  * Class:  CONSC.340
