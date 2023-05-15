@@ -1,6 +1,6 @@
 ////////////////////////////////////
 //Author: Isabel Cyr
-//5/9/2023
+//5/16/2023
 //COMSC 340
 //Dr. Cates
 //Algorithm 5.7 backtracking for knapsack problem
@@ -19,6 +19,28 @@ public class algorithm5_7{
       static int [] p = {0, 40, 30, 50, 10};
       static int [] w = {0, 2, 5, 10, 5};
       static int W = 16;
+      
+      /*
+      static int [] p1 = {0, 40, 30, 50, 10};
+      static int [] w1 = {0, 2, 5, 10, 5};
+      static int set1W = 16;
+      
+      static int [] p2 = {0, 40, 30, 50, 10};
+      static int [] w2 = {0, 2, 5, 10, 5};
+      static int set2W = 18;
+            
+      static int [] p3 = {0, 50, 55, 15, 50};
+      static int [] w3 = {0, 2, 10, 5, 20};
+      static int set3W = 25;
+      
+      static int [] p4 = {0, 50, 55, 15, 50};
+      static int [] w4 = {0, 2, 10,5, 20};
+      static int set4W = 40;
+      
+      static int [] p5 = {0, 1, 1, 1, 1};
+      static int [] w5 = {0, 2, 3, 4, 5};
+      static int set5W = 1;
+      */
    static void knapsack(int i, int profit, int weight){
       nodesVisited++;
       
@@ -60,32 +82,10 @@ public class algorithm5_7{
    }
    
    public static void main(String [] args){
-      int n = 4;
-      int [] p1 = {40, 30, 50, 10};
-      int [] w1 = {2, 5, 10, 5};
-      int set1W = 16;
-      
-      /*
-      int [] p2 = {40, 30, 50, 10};
-      int [] w2 = {2, 5, 10, 5};
-      int set2W = 18;
-      
-      int [] p3 = {50, 55, 15, 50};
-      int [] w3 = {2, 10, 5, 20};
-      int set3W = 25;
-      
-      int [] p4 = {50, 55, 15, 50};
-      int [] w4 = {2, 10,5, 20};
-      int set4W = 40;
-      
-      int [] p5 = {1, 1, 1, 1};
-      int [] w5 = {2, 3, 4, 5};
-      int set5W = 1;
-      */
       knapsack(0, 0, 0);
       //knapsack(0, weight, profit);
       //needs to print off for each data set
-      System.out.println("Set 1: ");
+      System.out.println("Set 2: ");
       System.out.println("There was a total profit of " + maxprofit);
       System.out.println("The items selected were ");
       for(int m = 1; m<=n; m++){
@@ -100,6 +100,7 @@ public class algorithm5_7{
       System.out.println("The items selected were ");
       System.out.println("Number of nodes visited was " + nodesVisited);
       
+      /*
       System.out.println("Set 3: ");
       System.out.println("There was a total profit of " + maxprofit);
       System.out.println("The items selected were ");
